@@ -11,20 +11,30 @@ The easiest way to import the school distances data is to use school_zones.txt (
 To import it, use pgadmin and use the COPY FROM clause:
 drop table if exists volusia.schoolzones;
 
-create table volusia.schoolzones( parid int, nearest_elem_school, distance_to_elem_school,  nearest_middle_school, distance_to_middle_school, nearest_high_school, distance_to_high_school);
+create table volusia.schoolzones (
+	parid int, 
+	nearest_Elem_School VARCHAR, 
+	distance_To_Elem_School float, 
+	nearest_Middle_School VARCHAR, 
+	distance_To_Middle_School float,
+	nearest_High_School VARCHAR,
+	distance_To_High_School float
+);
 
--- load table COPY (select parid, parid int, nearest_elem_school, distance_to_elem_school,  nearest_middle_school, distance_to_middle_school, nearest_high_school, distance_to_high_school) FROM 'C:\temp\cs540\school_zones.txt' WITH (FORMAT 'csv', DELIMITER E'\t', NULL '', HEADER);
+COPY volusia.schoolzones FROM 'C:\temp\cs540\school_zones.txt' WITH (FORMAT 'csv', DELIMITER E'\t', NULL '', HEADER);
 
-you can update your volusia.parcels with this schoolzones table or just use the table itself to view in QGIS.
+you must update your volusia.parcels in order to view this in QGIS. Update and match on parid.
 
 IF you add to volusia.parcels, ensure to run these queries:
 ALTER TABLE volusia.parcel
 add column nearest_Elem_School VARCHAR,
-add column distance_To_Elem_School double precision,
+add column distance_To_Elem_School float,
 add column nearest_Middle_School VARCHAR,
-add column distance_To_Middle_School double precision,
+add column distance_To_Middle_School float,
 add column nearest_High_School VARCHAR,
-add column distance_To_High_School double precision;
+add column distance_To_High_School float;
+
+You can also just import the file and join with parcels on parid.
 
 
 Option 2:
