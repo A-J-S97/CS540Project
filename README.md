@@ -25,8 +25,9 @@ create table volusia.schoolzones (
 COPY volusia.schoolzones FROM 'C:\temp\cs540\school_zones.txt' WITH (FORMAT 'csv', DELIMITER E'\t', NULL '', HEADER);
 ```
 you must update your volusia.parcels in order to view this in QGIS. Update and match on parid.
-```
+
 IF you add to volusia.parcels, ensure to run these queries:
+```
 ALTER TABLE volusia.parcel
 add column nearest_Elem_School VARCHAR,
 add column distance_To_Elem_School float,
