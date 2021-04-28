@@ -39,11 +39,11 @@ You can also just import the file and join with parcels on parid.
 
 
 **Option 2***:
-	Another option is to follow the same steps I did to acquire the distances which requires calculating the distances between the school geoms and parcel geoms.
+Another option is to follow the same steps I did to acquire the distances which requires calculating the distances between the school geoms and parcel geoms.
 
-	Download the Shape files for the schools here: http://maps.vcgov.org/gis/data/schools.htm
+Download the Shape files for the schools here: http://maps.vcgov.org/gis/data/schools.htm
 
-	The file get_gis_schools is a batch file that will import the shape data into PGAdmin. Verify it works with your system and file directory and run this to put the shapefiles into PgAdmin. Review the attached slides to learn about the process more.
+The file get_gis_schools is a batch file that will import the shape data into PGAdmin. Verify it works with your system and file directory and run this to put the shapefiles into PgAdmin. Review the attached slides to learn about the process more.
 
 
 ***NOTE***:
