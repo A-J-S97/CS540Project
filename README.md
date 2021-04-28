@@ -44,3 +44,7 @@ Download the Shape files for the schools here:
 http://maps.vcgov.org/gis/data/schools.htm
 
 The file get_gis_schools is a batch file that will import the shape data into PGAdmin. Verify it works with your system and file directory and run this to put the shapefiles into PgAdmin. Review the attached slides to learn about the process more.
+
+
+NOTE:
+The CSV may look empty but if you scroll through it there are entries. I used the Parcels table for creating the school data and those empty cells are results of Parids that don't have valid geoms (I used the distance between two geoms, the school and the current parid within the PgAdmin loop). You can create a new table for it or append it to your parcels table. From there, add columns to your sales_analysis table and add distances where the parids match. 
